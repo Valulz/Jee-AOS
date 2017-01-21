@@ -1,0 +1,24 @@
+{
+    "notifApp": {
+        "userAE" : {
+            "home": {
+                "title": "UserAES",
+                "createLabel": "Créer un nouveau User AE",
+                "createOrEditLabel": "Créer ou éditer un User AE",
+                "search": "Recherche pour User AE"
+            },
+            "created": "Un nouveau User AE a été créé avec l'identifiant {{ param }}",
+            "updated": "Le User AE avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le User AE avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le User AE {{ id }} ?"
+            },
+            "detail": {
+                "title": "User AE"
+            },
+            "region": "Region",
+            "owner": "Owner",
+            "type": "Type"
+        }
+    }
+}
