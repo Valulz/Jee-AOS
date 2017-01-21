@@ -1,5 +1,6 @@
 package fr.despoval.notifei.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -31,6 +32,10 @@ public class Product implements Serializable {
                joinColumns = @JoinColumn(name="products_id", referencedColumnName="ID"),
                inverseJoinColumns = @JoinColumn(name="ingredients_id", referencedColumnName="ID"))
     private Set<Ingredient> ingredients = new HashSet<>();
+
+    @OneToMany(mappedBy = "product")
+    @JsonIgnore
+    private Set<Notification> notifications = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -76,6 +81,31 @@ public class Product implements Serializable {
 
     public void setIngredients(Set<Ingredient> ingredients) {
         this.ingredients = ingredients;
+    }
+
+    public Set<Notification> getNotifications() {
+        return notifications;
+    }
+
+    public Product notifications(Set<Notification> notifications) {
+        this.notifications = notifications;
+        return this;
+    }
+
+    public Product addNotifications(Notification notification) {
+        notifications.add(notification);
+        notification.setProduct(this);
+        return this;
+    }
+
+    public Product removeNotifications(Notification notification) {
+        notifications.remove(notification);
+        notification.setProduct(null);
+        return this;
+    }
+
+    public void setNotifications(Set<Notification> notifications) {
+        this.notifications = notifications;
     }
 
     @Override

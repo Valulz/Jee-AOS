@@ -5,9 +5,9 @@
         .module('notifApp')
         .controller('ProductDetailController', ProductDetailController);
 
-    ProductDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Product', 'Ingredient'];
+    ProductDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Product', 'Ingredient', 'Notification'];
 
-    function ProductDetailController($scope, $rootScope, $stateParams, previousState, entity, Product, Ingredient) {
+    function ProductDetailController($scope, $rootScope, $stateParams, previousState, entity, Product, Ingredient, Notification) {
         var vm = this;
 
         vm.product = entity;

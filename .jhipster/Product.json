@@ -8,6 +8,12 @@
             "otherEntityField": "name",
             "ownerSide": true,
             "otherEntityRelationshipName": "products"
+        },
+        {
+            "relationshipName": "notifications",
+            "otherEntityName": "notification",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "product"
         }
     ],
     "fields": [
