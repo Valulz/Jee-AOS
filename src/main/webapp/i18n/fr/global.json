@@ -10,6 +10,7 @@
                 "userType": "User Type",
                 "userAe": "User AE",
                 "adverseEffect": "Adverse Effect",
+                "product": "Product",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
