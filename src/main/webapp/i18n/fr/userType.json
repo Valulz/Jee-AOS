@@ -1,0 +1,23 @@
+{
+    "notifApp": {
+        "userType" : {
+            "home": {
+                "title": "UserTypes",
+                "createLabel": "Créer un nouveau User Type",
+                "createOrEditLabel": "Créer ou éditer un User Type",
+                "search": "Recherche pour User Type"
+            },
+            "created": "Un nouveau User Type a été créé avec l'identifiant {{ param }}",
+            "updated": "Le User Type avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le User Type avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le User Type {{ id }} ?"
+            },
+            "detail": {
+                "title": "User Type"
+            },
+            "name": "Name",
+            "weight": "Weight"
+        }
+    }
+}
