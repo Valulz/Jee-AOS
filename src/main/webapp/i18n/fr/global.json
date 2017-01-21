@@ -12,6 +12,7 @@
                 "adverseEffect": "Adverse Effect",
                 "product": "Product",
                 "notification": "Notification",
+                "ingredient": "Ingredient",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
