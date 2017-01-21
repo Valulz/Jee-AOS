@@ -4,6 +4,8 @@ package fr.despoval.notifei.domain;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -24,6 +26,12 @@ public class Product implements Serializable {
     @Column(name = "name", length = 255, nullable = false)
     private String name;
 
+    @ManyToMany
+    @JoinTable(name = "product_ingredients",
+               joinColumns = @JoinColumn(name="products_id", referencedColumnName="ID"),
+               inverseJoinColumns = @JoinColumn(name="ingredients_id", referencedColumnName="ID"))
+    private Set<Ingredient> ingredients = new HashSet<>();
+
     public Long getId() {
         return id;
     }
@@ -43,6 +51,31 @@ public class Product implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public Product ingredients(Set<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+        return this;
+    }
+
+    public Product addIngredients(Ingredient ingredient) {
+        ingredients.add(ingredient);
+        ingredient.getProducts().add(this);
+        return this;
+    }
+
+    public Product removeIngredients(Ingredient ingredient) {
+        ingredients.remove(ingredient);
+        ingredient.getProducts().remove(this);
+        return this;
+    }
+
+    public void setIngredients(Set<Ingredient> ingredients) {
+        this.ingredients = ingredients;
     }
 
     @Override

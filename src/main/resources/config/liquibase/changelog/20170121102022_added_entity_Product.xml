@@ -31,5 +31,16 @@
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
         
+        <createTable tableName="product_ingredients">
+            <column name="ingredients_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="products_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="products_id, ingredients_id" tableName="product_ingredients"/>
+        
     </changeSet>
 </databaseChangeLog>

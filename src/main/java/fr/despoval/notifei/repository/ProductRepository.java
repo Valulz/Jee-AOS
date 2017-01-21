@@ -3,6 +3,7 @@ package fr.despoval.notifei.repository;
 import fr.despoval.notifei.domain.Product;
 
 import org.springframework.data.jpa.repository.*;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -11,5 +12,11 @@ import java.util.List;
  */
 @SuppressWarnings("unused")
 public interface ProductRepository extends JpaRepository<Product,Long> {
+
+    @Query("select distinct product from Product product left join fetch product.ingredients")
+    List<Product> findAllWithEagerRelationships();
+
+    @Query("select product from Product product left join fetch product.ingredients where product.id =:id")
+    Product findOneWithEagerRelationships(@Param("id") Long id);
 
 }

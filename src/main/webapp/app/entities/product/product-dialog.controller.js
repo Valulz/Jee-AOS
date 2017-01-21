@@ -5,14 +5,15 @@
         .module('notifApp')
         .controller('ProductDialogController', ProductDialogController);
 
-    ProductDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Product'];
+    ProductDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Product', 'Ingredient'];
 
-    function ProductDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Product) {
+    function ProductDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Product, Ingredient) {
         var vm = this;
 
         vm.product = entity;
         vm.clear = clear;
         vm.save = save;
+        vm.ingredients = Ingredient.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

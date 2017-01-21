@@ -1,6 +1,15 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "ingredients",
+            "otherEntityName": "ingredient",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "products"
+        }
+    ],
     "fields": [
         {
             "fieldName": "name",
