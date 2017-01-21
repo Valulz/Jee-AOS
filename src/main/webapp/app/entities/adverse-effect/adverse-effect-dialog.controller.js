@@ -5,14 +5,15 @@
         .module('notifApp')
         .controller('AdverseEffectDialogController', AdverseEffectDialogController);
 
-    AdverseEffectDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'AdverseEffect'];
+    AdverseEffectDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'AdverseEffect', 'Notification'];
 
-    function AdverseEffectDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, AdverseEffect) {
+    function AdverseEffectDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, AdverseEffect, Notification) {
         var vm = this;
 
         vm.adverseEffect = entity;
         vm.clear = clear;
         vm.save = save;
+        vm.notifications = Notification.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

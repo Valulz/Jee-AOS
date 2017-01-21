@@ -1,6 +1,13 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "notifications",
+            "otherEntityName": "notification",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "effect"
+        }
+    ],
     "fields": [
         {
             "fieldName": "name",

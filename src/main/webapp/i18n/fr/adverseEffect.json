@@ -16,7 +16,8 @@
             "detail": {
                 "title": "Adverse Effect"
             },
-            "name": "Name"
+            "name": "Name",
+            "notifications": "Notifications"
         }
     }
 }

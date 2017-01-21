@@ -1,9 +1,12 @@
 package fr.despoval.notifei.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -24,6 +27,10 @@ public class AdverseEffect implements Serializable {
     @Column(name = "name", length = 255, nullable = false)
     private String name;
 
+    @OneToMany(mappedBy = "effect")
+    @JsonIgnore
+    private Set<Notification> notifications = new HashSet<>();
+
     public Long getId() {
         return id;
     }
@@ -43,6 +50,31 @@ public class AdverseEffect implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Notification> getNotifications() {
+        return notifications;
+    }
+
+    public AdverseEffect notifications(Set<Notification> notifications) {
+        this.notifications = notifications;
+        return this;
+    }
+
+    public AdverseEffect addNotifications(Notification notification) {
+        notifications.add(notification);
+        notification.setEffect(this);
+        return this;
+    }
+
+    public AdverseEffect removeNotifications(Notification notification) {
+        notifications.remove(notification);
+        notification.setEffect(null);
+        return this;
+    }
+
+    public void setNotifications(Set<Notification> notifications) {
+        this.notifications = notifications;
     }
 
     @Override
