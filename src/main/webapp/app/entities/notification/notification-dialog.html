@@ -1,0 +1,82 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myNotificationLabel" data-translate="notifApp.notification.home.createOrEditLabel">Create or edit a Notification</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.notification.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.notification.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="notifApp.notification.date" for="field_date">Date</label>
+                <div class="input-group">
+                    <input id="field_date" type="text" class="form-control" name="date" datetime-picker="{{dateformat}}" ng-model="vm.notification.date" is-open="vm.datePickerOpenStatus.date"
+                    required  />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('date')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.date.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.date.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.date.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="notifApp.notification.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.notification.user" ng-options="userAE as userAE.owner.login for userAE in vm.useraes track by userAE.id" required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.user.$invalid">
+            <p class="help-block"
+                ng-show="editForm.user.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+        <div class="form-group">
+            <label data-translate="notifApp.notification.product" for="field_product">Product</label>
+            <select class="form-control" id="field_product" name="product" ng-model="vm.notification.product" ng-options="product as product.name for product in vm.products track by product.id" required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.product.$invalid">
+            <p class="help-block"
+                ng-show="editForm.product.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+        <div class="form-group">
+            <label data-translate="notifApp.notification.effect" for="field_effect">Effect</label>
+            <select class="form-control" id="field_effect" name="effect" ng-model="vm.notification.effect" ng-options="adverseEffect as adverseEffect.name for adverseEffect in vm.adverseeffects track by adverseEffect.id" required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.effect.$invalid">
+            <p class="help-block"
+                ng-show="editForm.effect.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
