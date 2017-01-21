@@ -9,6 +9,7 @@
                 "main": "Entités",
                 "userType": "User Type",
                 "userAe": "User AE",
+                "adverseEffect": "Adverse Effect",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

@@ -1,0 +1,22 @@
+{
+    "notifApp": {
+        "adverseEffect" : {
+            "home": {
+                "title": "AdverseEffects",
+                "createLabel": "Créer un nouveau Adverse Effect",
+                "createOrEditLabel": "Créer ou éditer un Adverse Effect",
+                "search": "Recherche pour Adverse Effect"
+            },
+            "created": "Un nouveau Adverse Effect a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Adverse Effect avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Adverse Effect avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Adverse Effect {{ id }} ?"
+            },
+            "detail": {
+                "title": "Adverse Effect"
+            },
+            "name": "Name"
+        }
+    }
+}
