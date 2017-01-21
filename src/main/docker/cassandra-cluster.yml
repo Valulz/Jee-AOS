@@ -1,0 +1,27 @@
+version: '2'
+services:
+    notif-cassandra:
+        container_name: notif-cassandra
+        image: cassandra:3.9
+        # volumes:
+        #     - ~/volumes/jhipster/notif/cassandra/:/var/lib/cassandra/data
+        ports:
+            - 7000:7000
+            - 7001:7001
+            - 7199:7199
+            - 9042:9042
+            - 9160:9160
+    notif-cassandra-node:
+        image: cassandra:3.9
+        links:
+            - notif-cassandra:seed
+        environment:
+            - CASSANDRA_SEEDS=seed
+    notif-cassandra-migration:
+        extends:
+            file: cassandra-migration.yml
+            service: notif-cassandra-migration
+        links:
+            - notif-cassandra
+        environment:
+            - CREATE_KEYSPACE_SCRIPT=create-keyspace-prod.cql

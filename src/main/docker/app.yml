@@ -1,0 +1,35 @@
+#-------------------------------------------------------------------------------
+# Note for using the rate-limiting:
+#   The comment part won't be copied if you use the subgenerator docker-compose
+#   you have to manually copy it
+#-------------------------------------------------------------------------------
+version: '2'
+services:
+    notif-app:
+        image: notif
+        external_links:
+            - notif-mysql:mysql
+            # Uncomment to have Cassandra working with the gateway
+            # - notif-cassandra:cassandra
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/notif?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - SPRING_DATA_CASSANDRA_CONTACTPOINTS=cassandra
+            - JHIPSTER_SLEEP=30 # gives time for the Cassandra cluster to start and execute the migration scripts
+        ports:
+            - 8888:8888
+    notif-mysql:
+        extends:
+            file: mysql.yml
+            service: notif-mysql
+    # Uncomment to have Cassandra working with the gateway
+    # notif-cassandra:
+    #     extends:
+    #         file: cassandra-cluster.yml
+    #         service: notif-cassandra
+    # notif-cassandra-migration:
+    #     extends:
+    #         file: cassandra-migration.yml
+    #         service: notif-cassandra-migration
+    #     environment:
+    #         - CREATE_KEYSPACE_SCRIPT=create-keyspace-prod.cql
