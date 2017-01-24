@@ -13,7 +13,7 @@
             parent: 'entity',
             url: '/notification',
             data: {
-                authorities: ['ROLE_USER'],
+                // authorities: ['ROLE_USER'],
                 pageTitle: 'notifApp.notification.home.title'
             },
             views: {
@@ -35,7 +35,7 @@
             parent: 'entity',
             url: '/notification/{id}',
             data: {
-                authorities: ['ROLE_USER'],
+                // authorities: ['ROLE_USER'],
                 pageTitle: 'notifApp.notification.detail.title'
             },
             views: {

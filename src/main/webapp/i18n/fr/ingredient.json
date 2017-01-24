@@ -3,18 +3,18 @@
         "ingredient" : {
             "home": {
                 "title": "Ingredients",
-                "createLabel": "Créer un nouveau Ingredient",
-                "createOrEditLabel": "Créer ou éditer un Ingredient",
-                "search": "Recherche pour Ingredient"
+                "createLabel": "Créer un nouveau Ingrédient",
+                "createOrEditLabel": "Créer ou éditer un Ingrédient",
+                "search": "Recherche pour Ingrédient"
             },
-            "created": "Un nouveau Ingredient a été créé avec l'identifiant {{ param }}",
-            "updated": "Le Ingredient avec l'identifiant {{ param }} a été mis à jour",
-            "deleted": "Le Ingredient avec l'identifiant {{ param }} a été supprimé",
+            "created": "Un nouveau Ingrédient a été créé avec l'identifiant {{ param }}",
+            "updated": "L'Ingrédient avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "L'Ingrédient avec l'identifiant {{ param }} a été supprimé",
             "delete": {
-                "question": "Etes-vous certain de vouloir supprimer le Ingredient {{ id }} ?"
+                "question": "Etes-vous certain de vouloir supprimer l'Ingrédient {{ id }} ?"
             },
             "detail": {
-                "title": "Ingredient"
+                "title": "Ingrédient"
             },
             "name": "Name",
             "products": "Products"

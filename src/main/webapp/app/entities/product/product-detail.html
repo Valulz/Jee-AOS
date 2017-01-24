@@ -14,7 +14,22 @@
                 <a ui-sref="ingredient-detail({id: ingredients.id})">{{ingredients.name}}</a>{{$last ? '' : ', '}}
             </span>
         </dd>
+
+        <!--<dt><span>Effets Indésirable connus sur ce produit</span></dt>-->
+        <!--<dd>-->
+            <!--<span ng-repeat="notifications in vm.product.notifications">-->
+                <!--<a ui-sref="notification-detail({id:notifications.id})">{{notification.effect.name}}</a>-->
+            <!--</span>-->
+        <!--</dd>-->
+
     </dl>
+
+
+    <table>
+        <tr ng-repeat="notifications in vm.product.notifications">
+            <td><a ui-sref="notification-detail({id:notifications.id})">{{notifications.effect.name}}</a></td>
+        </tr>
+    </table>
 
     <button type="submit"
             ui-sref="{{ vm.previousState }}"

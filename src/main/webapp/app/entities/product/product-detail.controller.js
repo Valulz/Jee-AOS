@@ -11,6 +11,7 @@
         var vm = this;
 
         vm.product = entity;
+
         vm.previousState = previousState.name;
 
         var unsubscribe = $rootScope.$on('notifApp:productUpdate', function(event, result) {

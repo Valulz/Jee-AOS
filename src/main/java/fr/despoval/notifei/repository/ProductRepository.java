@@ -1,5 +1,6 @@
 package fr.despoval.notifei.repository;
 
+import fr.despoval.notifei.domain.AdverseEffect;
 import fr.despoval.notifei.domain.Product;
 
 import org.springframework.data.jpa.repository.*;
@@ -19,4 +20,7 @@ public interface ProductRepository extends JpaRepository<Product,Long> {
     @Query("select product from Product product left join fetch product.ingredients where product.id =:id")
     Product findOneWithEagerRelationships(@Param("id") Long id);
 
+    @Query("SELECT effect FROM AdverseEffect effect JOIN Notification notif " +
+        "ON effect.id = notif.effect.id WHERE notif.product.id = :id")
+    List<AdverseEffect> findAdverseEffectByProductId(@Param("id") Long id);
 }

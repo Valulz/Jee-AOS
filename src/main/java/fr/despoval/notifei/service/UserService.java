@@ -2,8 +2,12 @@ package fr.despoval.notifei.service;
 
 import fr.despoval.notifei.domain.Authority;
 import fr.despoval.notifei.domain.User;
+import fr.despoval.notifei.domain.UserAE;
+import fr.despoval.notifei.domain.UserType;
 import fr.despoval.notifei.repository.AuthorityRepository;
+import fr.despoval.notifei.repository.UserAERepository;
 import fr.despoval.notifei.repository.UserRepository;
+import fr.despoval.notifei.repository.UserTypeRepository;
 import fr.despoval.notifei.security.AuthoritiesConstants;
 import fr.despoval.notifei.security.SecurityUtils;
 import fr.despoval.notifei.service.util.RandomUtil;
@@ -36,6 +40,12 @@ public class UserService {
 
     @Inject
     private AuthorityRepository authorityRepository;
+
+    @Inject
+    private UserAERepository userAERepository;
+
+    @Inject
+    private UserTypeRepository userTypeRepository;
 
     public Optional<User> activateRegistration(String key) {
         log.debug("Activating user for activation key {}", key);
@@ -97,8 +107,30 @@ public class UserService {
         newUser.setAuthorities(authorities);
         userRepository.save(newUser);
         log.debug("Created Information for User: {}", newUser);
+
+
+        //set the user region and type (default)
+        UserAE userAE = new UserAE();
+        userAE.setOwner(newUser);
+
+        UserType type = null;
+        if(userTypeRepository.count() == 0){
+            type = new UserType();
+            type.setName("Quelconque");
+            type.setWeight(1d);
+
+            userTypeRepository.save(type);
+            log.debug("Created Information for UserType : {}", type);
+        } else {
+            type = userTypeRepository.findAll().get(0);
+        }
+
+        userAE.setType(type);
+        userAERepository.save(userAE);
+
         return newUser;
     }
+
 
     public User createUser(ManagedUserVM managedUserVM) {
         User user = new User();

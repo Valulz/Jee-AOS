@@ -13,7 +13,7 @@
             parent: 'entity',
             url: '/adverse-effect',
             data: {
-                authorities: ['ROLE_USER'],
+                // authorities: ['ROLE_USER'],
                 pageTitle: 'notifApp.adverseEffect.home.title'
             },
             views: {
@@ -35,7 +35,7 @@
             parent: 'entity',
             url: '/adverse-effect/{id}',
             data: {
-                authorities: ['ROLE_USER'],
+                // authorities: ['ROLE_USER'],
                 pageTitle: 'notifApp.adverseEffect.detail.title'
             },
             views: {
@@ -67,7 +67,7 @@
             parent: 'adverse-effect-detail',
             url: '/detail/edit',
             data: {
-                authorities: ['ROLE_USER']
+                // authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -92,7 +92,7 @@
             parent: 'adverse-effect',
             url: '/new',
             data: {
-                authorities: ['ROLE_USER']
+                // authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -120,7 +120,7 @@
             parent: 'adverse-effect',
             url: '/{id}/edit',
             data: {
-                authorities: ['ROLE_USER']
+                // authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -145,7 +145,7 @@
             parent: 'adverse-effect',
             url: '/{id}/delete',
             data: {
-                authorities: ['ROLE_USER']
+                // authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({

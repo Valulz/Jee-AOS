@@ -2,19 +2,19 @@
     "notifApp": {
         "userType" : {
             "home": {
-                "title": "UserTypes",
-                "createLabel": "Créer un nouveau User Type",
-                "createOrEditLabel": "Créer ou éditer un User Type",
-                "search": "Recherche pour User Type"
+                "title": "Types d'Utilisateur",
+                "createLabel": "Créer un nouveau Type d'Utilisateur",
+                "createOrEditLabel": "Créer ou éditer un Type d'Utilisateur",
+                "search": "Recherche pour Type d'Utilisateur"
             },
-            "created": "Un nouveau User Type a été créé avec l'identifiant {{ param }}",
-            "updated": "Le User Type avec l'identifiant {{ param }} a été mis à jour",
-            "deleted": "Le User Type avec l'identifiant {{ param }} a été supprimé",
+            "created": "Un nouveau Type d'Utilisateur a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Type d'Utilisateur avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Type d'Utilisateur avec l'identifiant {{ param }} a été supprimé",
             "delete": {
-                "question": "Etes-vous certain de vouloir supprimer le User Type {{ id }} ?"
+                "question": "Etes-vous certain de vouloir supprimer le Type d'Utilisateur {{ id }} ?"
             },
             "detail": {
-                "title": "User Type"
+                "title": "Type d'Utilisateur"
             },
             "name": "Name",
             "weight": "Weight"

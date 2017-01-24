@@ -13,7 +13,7 @@
             parent: 'entity',
             url: '/user-type',
             data: {
-                authorities: ['ROLE_USER'],
+                // authorities: ['ROLE_USER'],
                 pageTitle: 'notifApp.userType.home.title'
             },
             views: {
@@ -35,7 +35,7 @@
             parent: 'entity',
             url: '/user-type/{id}',
             data: {
-                authorities: ['ROLE_USER'],
+                // authorities: ['ROLE_USER'],
                 pageTitle: 'notifApp.userType.detail.title'
             },
             views: {
@@ -67,7 +67,7 @@
             parent: 'user-type-detail',
             url: '/detail/edit',
             data: {
-                authorities: ['ROLE_USER']
+                // authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -92,7 +92,7 @@
             parent: 'user-type',
             url: '/new',
             data: {
-                authorities: ['ROLE_USER']
+                // authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -121,7 +121,7 @@
             parent: 'user-type',
             url: '/{id}/edit',
             data: {
-                authorities: ['ROLE_USER']
+                // authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -146,7 +146,7 @@
             parent: 'user-type',
             url: '/{id}/delete',
             data: {
-                authorities: ['ROLE_USER']
+                // authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({

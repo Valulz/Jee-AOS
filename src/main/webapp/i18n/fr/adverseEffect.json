@@ -2,19 +2,19 @@
     "notifApp": {
         "adverseEffect" : {
             "home": {
-                "title": "AdverseEffects",
-                "createLabel": "Créer un nouveau Adverse Effect",
-                "createOrEditLabel": "Créer ou éditer un Adverse Effect",
-                "search": "Recherche pour Adverse Effect"
+                "title": "Effets Indésiables",
+                "createLabel": "Créer un nouveau Effet Indésiable",
+                "createOrEditLabel": "Créer ou éditer un Effet Indésiable",
+                "search": "Recherche pour Effet Indésiable"
             },
-            "created": "Un nouveau Adverse Effect a été créé avec l'identifiant {{ param }}",
-            "updated": "Le Adverse Effect avec l'identifiant {{ param }} a été mis à jour",
-            "deleted": "Le Adverse Effect avec l'identifiant {{ param }} a été supprimé",
+            "created": "Un nouveau Effet Indésiable a été créé avec l'identifiant {{ param }}",
+            "updated": "L'Effet Indésiable avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "L'Effet Indésiable avec l'identifiant {{ param }} a été supprimé",
             "delete": {
-                "question": "Etes-vous certain de vouloir supprimer le Adverse Effect {{ id }} ?"
+                "question": "Etes-vous certain de vouloir supprimer l'Effet Indésiable {{ id }} ?"
             },
             "detail": {
-                "title": "Adverse Effect"
+                "title": "Effet Indésiable"
             },
             "name": "Name",
             "notifications": "Notifications"
