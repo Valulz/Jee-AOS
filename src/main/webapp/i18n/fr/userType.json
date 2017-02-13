@@ -16,8 +16,8 @@
             "detail": {
                 "title": "Type d'Utilisateur"
             },
-            "name": "Name",
-            "weight": "Weight"
+            "name": "Nom",
+            "weight": "Poids"
         }
     }
 }

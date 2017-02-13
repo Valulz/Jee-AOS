@@ -16,8 +16,8 @@
             "detail": {
                 "title": "Produit"
             },
-            "name": "Name",
-            "ingredients": "Ingredients",
+            "name": "Nom",
+            "ingredients": "Ingrédients",
             "notifications": "Notifications"
         }
     }

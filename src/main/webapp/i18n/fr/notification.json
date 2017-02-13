@@ -17,9 +17,9 @@
                 "title": "Notification"
             },
             "date": "Date",
-            "user": "User",
-            "product": "Product",
-            "effect": "Effect"
+            "user": "Utilisateur",
+            "product": "Produit",
+            "effect": "Effet Indésirable"
         }
     }
 }
